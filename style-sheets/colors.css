@@ -1,0 +1,17 @@
+:root{
+    --dark-bg:hsl(0, 0%, 7%);
+    --dark-level3:hsl(0, 0%, 15%);
+    --dark-level2:hsl(240, 3%, 46%);
+    --dark-level1:hsl(240, 1%, 59%);
+    --white:white;
+    --darker-blue:hsl(214, 100%, 55%);
+    --lighter-blue:hsl(210, 100%, 65%);
+    --red: hsl(354, 63%, 57%);
+    --green:hsl(140, 63%, 57%);
+    --yellow:hsl(49, 85%, 70%);
+}
+
+body{
+    background: var(--dark-bg);
+    color: var(--dark-level1);
+}

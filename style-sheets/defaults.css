@@ -1,0 +1,31 @@
+/*BODY RESET AND DEFAULTS*/
+@font-face {
+    font-family: 'Sora';
+    src: url('../typing-speed-test-main/assets/fonts/Sora/static/Sora-Regular.ttf');
+    font-weight:400;
+}
+@font-face {
+    font-family: 'Sora';
+    src: url('../typing-speed-test-main/assets/fonts/Sora/static/Sora-SemiBold.ttf');
+    font-weight:600;
+}
+@font-face {
+    font-family: 'Sora';
+    src: url('../typing-speed-test-main/assets/fonts/Sora/static/Sora-Bold.ttf');
+    font-weight:700;
+}
+
+html,body{
+    font-family: "Sora";
+    height:100%;
+}
+
+body{
+    padding:1.5rem;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
