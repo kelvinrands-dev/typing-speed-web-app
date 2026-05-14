@@ -51,8 +51,8 @@ header{
 }
 
 .wpm-accuracy-time>:nth-child(2){
-    border-left: 2px solid var(--dark-level1);
-    border-right:2px solid var(--dark-level1);
+    border-left: 1px solid var(--dark-level1);
+    border-right:1px solid var(--dark-level1);
 }
 
 .bold-and-big{
@@ -73,9 +73,35 @@ header{
     display:flex;
     gap:0.5rem;
     justify-content: center;
+    width:100%;
 }
 
-.mobile-diff-and-mode>*{
+.mobile-diff-section,.mobile-timemode-section{
+    position: relative;
+    width:50%;
+    display:flex;
+    justify-content: center;
+}
+
+.dropdown-btn{
+    all:unset;
+    border: 1px solid var(--dark-level2);
+    padding:0.25rem;
+    width:100%;
+    border-radius:0.5rem;
+    color: var(--white);
+
+    display:flex;
+    justify-content: center;
+    gap:0.5rem;
+
+}
+
+.dropdown-arrow{
+    width:10px;
+}
+
+/*.mobile-diff-and-mode>*{
     font-family: "Sora";
     background:var(--dark-bg);
     color: var(--white);
@@ -83,4 +109,4 @@ header{
     width:100%;
     text-align:center;
     border-radius:0.5rem;
-}
+}*/
