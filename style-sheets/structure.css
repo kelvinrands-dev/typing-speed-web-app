@@ -115,6 +115,10 @@ header{
     padding:0.5rem;
 }
 
+.dropdown-options.no-display{
+    display:none;
+}
+
 #mobile-diff-dropdown>:nth-child(2){
     border-top: 1px solid var(--dark-level2);
     border-bottom:1px solid var(--dark-level2);
@@ -133,4 +137,58 @@ label{
 
 input[type="radio"]{
     accent-color: var(--darker-blue);
+}
+
+
+
+
+/*STYLING THE MAIN*/
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--dark-level1);
+    border-bottom: 1px solid var(--dark-level1);
+    padding:1.5rem 0;
+    position: relative;
+}
+
+.start-test{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background: hsla(var(--dark-bg-blur), 0.5);
+    backdrop-filter: blur(3px);
+    width:100%;
+    height:100%;
+}
+
+.start-test-btn{
+    all:unset;
+    background:linear-gradient(to right, var(--darker-blue), var(--lighter-blue));
+    padding:0.7rem 1.4rem;
+    border-radius:0.5rem;
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.start-test-btn:hover{
+    background: var(--lighter-blue);
+    cursor: pointer;
+}
+
+.start-test-btn:active{
+    background: var(--darker-blue);
+    cursor: pointer;
+}
+
+.start-test>:nth-child(2){
+    color: var(--white);
+    font-weight:bold;
 }

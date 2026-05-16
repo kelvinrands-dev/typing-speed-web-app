@@ -17,11 +17,14 @@
 
 html,body{
     font-family: "Sora";
-    height:100vh;
 }
 
 body{
     padding:1.5rem;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
 }
 
 *{
@@ -30,6 +33,6 @@ body{
     box-sizing:border-box;
 }
 
-/*.no-display{
+.no-display{
     display:none;
-}*/
+}
