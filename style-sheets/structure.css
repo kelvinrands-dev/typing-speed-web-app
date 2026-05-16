@@ -123,3 +123,14 @@ header{
 #timemode-dropdown>:nth-child(1){
     border-bottom:1px solid var(--dark-level2);
 }
+
+/*STYLING THE RADIO BUTTONS AND THIER CONTAINER LABELS*/
+label{
+    display:flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+input[type="radio"]{
+    accent-color: var(--darker-blue);
+}
