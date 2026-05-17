@@ -214,3 +214,24 @@ main{
     background: var(--dark-level3);
     color:var(--white)
 }
+
+
+
+
+
+
+
+
+
+
+/*RESULTS PAGE STYLING*/
+
+/*ARCHIEVEMENT HEADERS*/
+.achievement-header{
+    display:flex;
+    flex-direction: column;
+}
+
+.baseline-established,.high-score-smashed{
+    display: none;
+}
