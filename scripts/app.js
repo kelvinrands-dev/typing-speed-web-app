@@ -1,11 +1,7 @@
+import { startTestOverlay } from "./remove-overlay.js";
+import { splitData,spans,display } from "./source-of-truth.js";
+
 let appState = "notStarted";
 
-//START TYPING BEST BUTTON REMOVAL ON CLICK
-const startTestOverlay = document.querySelector(".start-test");
 
-startTestOverlay.addEventListener("click", (e)=>{
-    if(e.target.closest(".typing-text-container")){
-        startTestOverlay.classList.add("no-display");
-        appState="getting started"
-    }
-});
+//LOADING APP DATA TO DOM

@@ -127,4 +127,7 @@ const appData = {
   ]
 }
 
-export{appData};
+const { easy,medium,hard }=appData;
+
+export default appData;
+export {easy,medium,hard}

@@ -203,6 +203,10 @@ main{
     font-weight:bold;
 }
 
+.display-text-area>*{
+    font-size: 2rem;
+}
+
 
 /*RESTART TEST BUTTON*/
 .restart-btn{
