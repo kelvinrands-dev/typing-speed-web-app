@@ -175,6 +175,10 @@ main{
     height:100%;
 }
 
+.start-test.no-display{
+    display:none;
+}
+
 .start-test-btn{
     all:unset;
     background:linear-gradient(to right, var(--darker-blue), var(--lighter-blue));
