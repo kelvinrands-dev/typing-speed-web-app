@@ -1,24 +1,18 @@
 import appData,{ easy,medium,hard } from "./app-data.js";
+import { displayArea } from "./display-and-input-area.js";
 
 //SPLITTING APP DATA INTO CHARACTERS
-const splitData = easy[0].text.split("");
-
-//FETCHING DISPLAY AREA
-const display = document.querySelector(".display-text-area");
-
+const splitAppData = easy[0].text.split("");
 
 const spans = [];
 
-splitData.forEach((char)=>{
+splitAppData.forEach((char)=>{
     const span = document.createElement("span");
     span.textContent=char;
     span.classList.add("char-span");
-    display.append(span);
+    displayArea.append(span);
     spans.push(char);
 })
 
-console.log(spans);
 
-
-
-export { splitData,spans,display }
+export { splitAppData,spans }
