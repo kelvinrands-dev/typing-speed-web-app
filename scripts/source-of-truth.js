@@ -6,7 +6,8 @@ const splitAppData = easy[0].text.split("");
 
 splitAppData.forEach((char)=>{
     const span = document.createElement("span");
-    span.textContent=char===" "? "\u00A0" : char;
+    if(char === " "){span.classList.add("space");}
+    span.textContent=char;
     span.classList.add("char-span");
     displayArea.append(span);
 });
