@@ -161,7 +161,7 @@ main{
 }
 
 .start-test{
-    display:flex;/*REMOVE ME LATER*/
+    display:none;/*REMOVE ME LATER*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
