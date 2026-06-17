@@ -1,0 +1,7 @@
+.char-span.correct{
+    color: var(--green);
+}
+
+.char-span.incorrect{
+    color: var(--red);
+}

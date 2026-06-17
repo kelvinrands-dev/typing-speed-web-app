@@ -13,7 +13,6 @@ splitAppData.forEach((char)=>{
 
 const spans = document.querySelectorAll(".char-span");
 
-console.log(spans[0].textContent);
 
 
 export { splitAppData,spans };
