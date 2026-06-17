@@ -13,9 +13,16 @@ let highlightIndex = 0;
 
 //TYPING ENGINE;
 userInput.addEventListener("keydown",(e)=>{
-    /*if (appState!=="test started"){
+    if (appState!=="test started"){
         changeAppState("test started");
-    }*/
+    }
+
+    const currentKey = e.key;
+
+    if(!spans[currentIndex].hasBeenTyped){
+
+    }
+
    console.log(e.key)
 })
 
