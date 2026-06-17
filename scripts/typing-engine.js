@@ -7,20 +7,18 @@ let currentIndex = 0;
 let correctChars = 0;
 let incorrectChars = 0;
 let totalChars = spans.length;
-let highlightIndex = 0;
 
 //REUSABLE FUNCTIONS
 const correctOrNot = (value)=>{
     spans[currentIndex].classList.add(value);
-    highlightIndex++;
 }
 
 const addHighlight = ()=>{
-    spans[highlightIndex].classList.add("highlight");
+    spans[currentIndex].classList.add("highlight");
 }
 
 const removeHighlight = ()=>{
-    spans[highlightIndex].classList.remove("highlight");
+    spans[currentIndex].classList.remove("highlight");
 }
 
 
@@ -45,7 +43,22 @@ userInput.addEventListener("keydown",(e)=>{
     
     //DECLARING CURRENT KEY AND CURRENT SPAN TEXT CONTENT
     const currentKey = e.key;
-    const currentSpan = splitAppData[currentIndex];
+    const currentChar = splitAppData[currentIndex];
+
+
+    //BACKSPACE LOGIC
+    if(currentKey==="Backspace"){
+        if(currentIndex>0){
+            spans[currentIndex].classList.remove("highlight");
+            currentIndex--;
+            spans[currentIndex].classList.remove("correct","incorrect");
+            spans[currentIndex].classList.add("highlight");
+            return;
+        }
+        else{
+            return;
+        }
+    }
 
     //REMOVE OLD HIGHLIGHT
     removeHighlight();
@@ -53,12 +66,10 @@ userInput.addEventListener("keydown",(e)=>{
     //ACTUAL LOGIC
     if(!spans[currentIndex].hasBeenTyped){
         
-        if(currentKey===currentSpan){
+        if(currentKey===currentChar){
             correctChars++;
             correctOrNot("correct");
             spans[currentIndex].hasBeenTyped = true;
-
-
         }
 
         else{
@@ -70,7 +81,7 @@ userInput.addEventListener("keydown",(e)=>{
     }
 
     else{
-        if(currentKey===currentSpan){
+        if(currentKey===currentChar){
             correctOrNot("correct");
 
         }
@@ -84,10 +95,10 @@ userInput.addEventListener("keydown",(e)=>{
 
     addHighlight();
 
-   console.log(e.key)
+   //console.log(e.key)
 })
 
 
 
 
-export {currentIndex,correctChars,incorrectChars,totalChars,highlightIndex};
+export {currentIndex,correctChars,incorrectChars,totalChars};
