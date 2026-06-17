@@ -6,7 +6,7 @@ const displayArea = document.querySelector(".display-text-area");
 
 //LOCKING FOCUS TO INPUT
 displayArea.addEventListener("click",(e)=>{
-    if(appState==="getting started"){
+    if(appState!=="not started"){
         userInput.focus();
     }
 });

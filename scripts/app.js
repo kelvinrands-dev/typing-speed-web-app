@@ -7,7 +7,7 @@ import { displayArea } from "./display-and-input-area.js";
 import { totalChars } from "./typing-engine.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
-let appState = "notStarted";
+let appState = "not started";
 const changeAppState = (newState)=>{
     appState = newState;
 }
