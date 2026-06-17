@@ -1,4 +1,4 @@
-import { spans } from "./source-of-truth.js";
+import { spans,splitAppData } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
 import { appState,changeAppState } from "./app.js";
 
@@ -9,10 +9,30 @@ let incorrectChars = 0;
 let totalChars = spans.length;
 let highlightIndex = 0;
 
+//REUSABLE FUNCTIONS
+const correctOrNot = (value)=>{
+    spans[currentIndex].classList.add(value);
+    highlightIndex++;
+}
+
+const addHighlight = ()=>{
+    spans[highlightIndex].classList.add("highlight");
+}
+
+const removeHighlight = ()=>{
+    spans[highlightIndex].classList.remove("highlight");
+}
+
+
+//INITIAL HIGHLIGHT
+if(currentIndex===0){
+    addHighlight();
+};
 
 
 //TYPING ENGINE;
 userInput.addEventListener("keydown",(e)=>{
+
     //IGNORING IRRELEVANT KEYS
     if(e.key.length>1 && e.key!=="Backspace"){return;};
 
@@ -25,36 +45,44 @@ userInput.addEventListener("keydown",(e)=>{
     
     //DECLARING CURRENT KEY AND CURRENT SPAN TEXT CONTENT
     const currentKey = e.key;
-    const currentSpan = spans[currentIndex].textContent;
+    const currentSpan = splitAppData[currentIndex];
 
+    //REMOVE OLD HIGHLIGHT
+    removeHighlight();
 
     //ACTUAL LOGIC
     if(!spans[currentIndex].hasBeenTyped){
         
         if(currentKey===currentSpan){
             correctChars++;
-            spans[currentIndex].classList.add("correct");
+            correctOrNot("correct");
             spans[currentIndex].hasBeenTyped = true;
-            currentIndex++;  
+
+
         }
-        
+
         else{
             incorrectChars++;
-            spans[currentIndex].classList.add("incorrect");
+            correctOrNot("incorrect");
             spans[currentIndex].hasBeenTyped = true;
-            currentIndex++;
+
         }
     }
+
     else{
         if(currentKey===currentSpan){
-            spans[currentIndex].classList.add("correct");
-            currentIndex++;
+            correctOrNot("correct");
+
         }
         else{
-            spans[currentIndex].classList.add("incorrect");
-            currentIndex++;
+            correctOrNot("incorrect");
+
         }
     }
+
+    currentIndex++;
+
+    addHighlight();
 
    console.log(e.key)
 })

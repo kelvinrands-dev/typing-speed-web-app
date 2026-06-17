@@ -1,7 +1,15 @@
+.char-span{
+    display: inline-block;
+}
+
 .char-span.correct{
     color: var(--green);
 }
 
 .char-span.incorrect{
     color: var(--red);
+}
+
+.char-span.highlight{
+    background: var(--dark-level2);
 }
