@@ -22,27 +22,11 @@ const removeHighlight = ()=>{
 }
 
 
-function followCurrentCharacter(){
+function followCurrentCharacter() {
+  const currentSpan = spans[currentIndex];
+  if (!currentSpan) return;
 
-    const currentSpan = spans[currentIndex];
-
-    if(!currentSpan) return;
-
-
-    const spanTop = currentSpan.offsetTop;
-    const spanBottom = spanTop + currentSpan.offsetHeight;
-
-
-    const visibleTop = displayArea.scrollTop;
-    const visibleBottom = visibleTop + displayArea.clientHeight;
-
-
-    if(spanBottom > visibleBottom){
-
-        displayArea.scrollTop = spanBottom - displayArea.clientHeight;
-
-    }
-
+  displayArea.scrollTop = currentSpan.offsetTop - displayArea.offsetTop - (displayArea.clientHeight / 2);
 }
 
 
