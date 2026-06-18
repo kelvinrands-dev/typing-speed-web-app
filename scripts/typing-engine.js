@@ -22,17 +22,45 @@ const removeHighlight = ()=>{
 }
 
 
+function followCurrentCharacter(){
+
+    const currentSpan = spans[currentIndex];
+
+    if(!currentSpan) return;
+
+
+    const spanTop = currentSpan.offsetTop;
+    const spanBottom = spanTop + currentSpan.offsetHeight;
+
+
+    const visibleTop = displayArea.scrollTop;
+    const visibleBottom = visibleTop + displayArea.clientHeight;
+
+
+    if(spanBottom > visibleBottom){
+
+        displayArea.scrollTop = spanBottom - displayArea.clientHeight;
+
+    }
+
+}
+
+
+
+
 //INITIAL HIGHLIGHT
 if(currentIndex===0){
     addHighlight();
 };
 
 
+
+
 //TYPING ENGINE;
-userInput.addEventListener("keydown",(e)=>{
+userInput.addEventListener("input",(e)=>{
 
     //IGNORING IRRELEVANT KEYS
-    if(e.key.length>1 && e.key!=="Backspace"){return;};
+    //if(e.key.length>1 && e.key!=="Backspace"){return;};
 
 
     //DECLARING START OF TEST
@@ -40,14 +68,9 @@ userInput.addEventListener("keydown",(e)=>{
         changeAppState("test started");
     }
 
-    
-    //DECLARING CURRENT KEY AND CURRENT SPAN TEXT CONTENT
-    const currentKey = e.key;
-    const currentChar = splitAppData[currentIndex];
-
 
     //BACKSPACE LOGIC
-    if(currentKey==="Backspace"){
+    if(e.inputType === "deleteContentBackward"){
         if(currentIndex>0){
             spans[currentIndex].classList.remove("highlight");
             currentIndex--;
@@ -60,6 +83,16 @@ userInput.addEventListener("keydown",(e)=>{
         }
     }
 
+    //FILTERING OUT UNWANTED INPUTS
+    if(!e.data){
+        return;
+    }
+
+    //DECLARING CURRENT KEY AND CURRENT SPAN TEXT CONTENT
+    const currentKey = e.data;
+    const currentChar = splitAppData[currentIndex];
+
+
     //REMOVE OLD HIGHLIGHT
     removeHighlight();
 
@@ -70,13 +103,14 @@ userInput.addEventListener("keydown",(e)=>{
             correctChars++;
             correctOrNot("correct");
             spans[currentIndex].hasBeenTyped = true;
+            //console.log(`correct: ${correctChars}, incorrect: ${incorrectChars}`);
         }
 
         else{
             incorrectChars++;
             correctOrNot("incorrect");
             spans[currentIndex].hasBeenTyped = true;
-
+            //console.log(`correct: ${correctChars}, incorrect: ${incorrectChars}`);
         }
     }
 
@@ -94,6 +128,7 @@ userInput.addEventListener("keydown",(e)=>{
     currentIndex++;
 
     addHighlight();
+    followCurrentCharacter();
 
    //console.log(e.key)
 })

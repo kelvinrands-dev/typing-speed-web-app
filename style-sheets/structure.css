@@ -6,9 +6,10 @@ header{
 }
 
 .logo-and-bestwpm{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items:center;
+    gap:3rem;
 }
 
 .header-2{
@@ -26,6 +27,12 @@ header{
 .wpm-best-text{
     display:flex;
     gap:0.25rem;
+}
+
+#index-restart-btn{
+    width:2rem;
+    padding:0.5rem;
+    justify-self:end;
 }
 
 .desktop-logos{
@@ -155,7 +162,7 @@ main{
     flex-direction: column;
     align-items: center;
     border-top: 1px solid var(--dark-level1);
-    border-bottom: 1px solid var(--dark-level1);
+    /*border-bottom: 1px solid var(--dark-level1);*/
     padding:1.5rem 0;
     position: relative;
 }
@@ -203,8 +210,13 @@ main{
     font-weight:bold;
 }
 
+.display-text-area{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 .display-text-area>*{
-    font-size: 1.9rem;
+    font-size: 1.5rem;
 }
 
 #hiddenInput{
