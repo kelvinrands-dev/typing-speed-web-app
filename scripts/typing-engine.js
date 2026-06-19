@@ -2,6 +2,7 @@ import { spans,splitAppData } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
 import { appState,changeAppState } from "./app.js";
 import { modeSystem } from "./app-mode.js";
+import { updateAccuracy } from "./accuracy-and-wpm.js";
 
 //DECLARING COUNTERS
 let currentIndex = 0;
@@ -26,27 +27,18 @@ const removeHighlight = ()=>{
 function followCurrentCharacter(){
 
     const currentSpan = spans[currentIndex];
-
     if(!currentSpan) return;
-
-
     const spanTop = currentSpan.offsetTop;
     const spanBottom = spanTop + currentSpan.offsetHeight;
-
 
     const visibleTop = displayArea.scrollTop;
     const visibleBottom = visibleTop + displayArea.clientHeight;
 
-
     if(spanBottom > visibleBottom){
-
         displayArea.scrollTop = spanBottom - displayArea.clientHeight;
-
     }
 
 }
-
-
 
 
 //INITIAL HIGHLIGHT
@@ -59,9 +51,6 @@ if(currentIndex===0){
 
 //TYPING ENGINE;
 userInput.addEventListener("input",(e)=>{
-
-    //IGNORING IRRELEVANT KEYS
-    //if(e.key.length>1 && e.key!=="Backspace"){return;};
 
 
     //DECLARING START OF TEST
@@ -125,7 +114,7 @@ userInput.addEventListener("input",(e)=>{
 
         }
     }
-
+    updateAccuracy();
     currentIndex++;
 
     addHighlight();
