@@ -64,7 +64,7 @@ userInput.addEventListener("input",(e)=>{
 
 
     //DECLARING START OF TEST
-    if (appState!=="test started"){
+    if (appState.status!=="test started"){
         changeAppState("test started");
     }
 
@@ -98,7 +98,6 @@ userInput.addEventListener("input",(e)=>{
 
     //ACTUAL LOGIC
     if(!spans[currentIndex].hasBeenTyped){
-        
         if(currentKey===currentChar){
             correctChars++;
             correctOrNot("correct");

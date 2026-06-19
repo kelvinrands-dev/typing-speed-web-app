@@ -2,18 +2,30 @@
 import { startTestOverlay } from "./remove-overlay.js";
 import { splitAppData,spans } from "./source-of-truth.js";
 import { displayArea } from "./display-and-input-area.js";
+import { diffDropDownBtn,difficultyText,difficultyIndex } from "./difficulty.js";
 
 //IMPORTING COUNTERS FROM TYPING ENGINE
 import { totalChars } from "./typing-engine.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
-let appState = "not started";
+const appState = {
+    status:"not started"
+};
 const changeAppState = (newState)=>{
-    appState = newState;
+    appState.status = newState;
 }
 
+//REUSABLE INCREMENT COUNTER FUNCTION
+const IncrementCounter = (counter)=>{
+    counter++;
+}
+//REUSABLE CHANGER FUNCTION
+const changeVariable = (variable,change)=>{
+    variable=change;
+};
 
 
 
 
-export { changeAppState,appState }
+
+export { changeAppState,appState,changeVariable }

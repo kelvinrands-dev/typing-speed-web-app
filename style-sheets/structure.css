@@ -116,6 +116,7 @@ header{
     color: var(--white);
     width:100%;
     gap:0.25rem;
+    z-index:1;
 }
 
 .dropdown-options>*{
