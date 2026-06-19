@@ -1,6 +1,7 @@
 import { spans,splitAppData } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
 import { appState,changeAppState } from "./app.js";
+import { modeSystem } from "./app-mode.js";
 
 //DECLARING COUNTERS
 let currentIndex = 0;
@@ -66,6 +67,7 @@ userInput.addEventListener("input",(e)=>{
     //DECLARING START OF TEST
     if (appState.status!=="test started"){
         changeAppState("test started");
+        modeSystem();
     }
 
 

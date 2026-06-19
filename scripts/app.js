@@ -2,9 +2,8 @@
 import { startTestOverlay } from "./remove-overlay.js";
 import { splitAppData,spans } from "./source-of-truth.js";
 import { displayArea } from "./display-and-input-area.js";
-import { diffDropDownBtn,difficultyText,difficultyIndex } from "./difficulty.js";
-
-//IMPORTING COUNTERS FROM TYPING ENGINE
+import { difficultyIndex } from "./difficulty.js";
+import { modeSystem } from "./app-mode.js";
 import { totalChars } from "./typing-engine.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
