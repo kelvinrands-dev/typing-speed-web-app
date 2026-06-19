@@ -155,7 +155,6 @@ main{
     flex-direction: column;
     gap:1rem;
     align-items: center;
-    overflow:hidden;
 }
 
 .typing-text-container{
@@ -166,7 +165,6 @@ main{
     /*border-bottom: 1px solid var(--dark-level1);*/
     padding:1.5rem 0;
     position: relative;
-    overflow: hidden; 
 }
 
 .start-test{
@@ -213,9 +211,8 @@ main{
 }
 
 .display-text-area{
-    height: 120px; /* fixed px, not vh — immune to keyboard resize */
-    overflow: hidden; /* not auto — no manual scroll, no scrollbar */
-    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .display-text-area>*{
