@@ -1,4 +1,4 @@
-import { spans,splitAppData } from "./source-of-truth.js";
+import { spans,splitAppData,totalChars } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
 import { appState,changeAppState,endTest } from "./app.js";
 import { modeSystem } from "./app-mode.js";
@@ -8,7 +8,12 @@ import { updateAccuracy,updateWpm } from "./accuracy-and-wpm.js";
 let currentIndex = 0;
 let correctChars = 0;
 let incorrectChars = 0;
-let totalChars = splitAppData.length;
+
+//let totalChars = splitAppData.length;
+
+/*const updateTotalChars = (total,newTotal)=>{
+    console.log("fuck")
+}*/
 
 //REUSABLE FUNCTIONS
 const correctOrNot = (value)=>{
@@ -138,4 +143,4 @@ userInput.addEventListener("input",(e)=>{
 
 
 
-export {currentIndex,correctChars,incorrectChars,totalChars};
+export {currentIndex,correctChars,incorrectChars };

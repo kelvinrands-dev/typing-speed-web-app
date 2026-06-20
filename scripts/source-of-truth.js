@@ -3,19 +3,26 @@ import { displayArea } from "./display-and-input-area.js";
 import { difficultyIndex } from "./difficulty.js";
 
 
+
 //SPLITTING APP DATA INTO CHARACTERS
 let splitAppData;
 let spans;
+let totalChars;
 
 
 //FUNCTION TO UPDATE ANYTIME
 const loadAppDifficulty = (newDiff)=>{
     displayArea.replaceChildren();
+
     if(!splitAppData){
         splitAppData = easy[difficultyIndex].text.split("");
+        totalChars = splitAppData.length;
+        //console.log(totalChars)
     }
     else{
         splitAppData = newDiff[difficultyIndex].text.split("");
+        totalChars = splitAppData.length;
+        //console.log(totalChars)
     } 
     
     splitAppData.forEach((char)=>{
@@ -34,4 +41,4 @@ loadAppDifficulty();
 
 
 
-export { splitAppData,loadAppDifficulty,spans };
+export { splitAppData,totalChars,loadAppDifficulty,spans };

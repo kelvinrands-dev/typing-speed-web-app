@@ -1,11 +1,11 @@
 //IMPORTS
 import { startTestOverlay } from "./remove-overlay.js";
-import { splitAppData,spans } from "./source-of-truth.js";
+import { splitAppData,spans,totalChars } from "./source-of-truth.js";
 import { displayArea } from "./display-and-input-area.js";
 import { difficultyIndex } from "./difficulty.js";
 import { modeSystem, timer } from "./app-mode.js";
-import { currentIndex, totalChars } from "./typing-engine.js";
-import { wpmTimer } from "./accuracy-and-wpm.js";
+import { correctChars, currentIndex } from "./typing-engine.js";
+import { currentAccuracy, currentWpm, wpmTimer } from "./accuracy-and-wpm.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
 const appState = {
@@ -33,6 +33,11 @@ const endTest = ()=>{
         clearInterval(wpmTimer);
         //console.log(appState.status)
         return;
+
+        localStorage.setItem("wpm",currentWpm);
+        localStorage.setItem("accuracy",currentAccuracy);
+        localStorage.setItem("corrChars",correctChars);
+        localStorage.setItem("totChars",totalChars);
     }
     
 }
