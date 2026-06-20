@@ -25,3 +25,11 @@
 .yellow{
     color:var(--yellow)
 }
+
+.white{
+    color:var(--white);
+}
+
+.green{
+    color:var(--green);
+}
