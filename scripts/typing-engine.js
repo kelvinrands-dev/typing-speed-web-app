@@ -2,7 +2,7 @@ import { spans,splitAppData } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
 import { appState,changeAppState } from "./app.js";
 import { modeSystem } from "./app-mode.js";
-import { updateAccuracy } from "./accuracy-and-wpm.js";
+import { updateAccuracy,updateWpm } from "./accuracy-and-wpm.js";
 
 //DECLARING COUNTERS
 let currentIndex = 0;
@@ -114,6 +114,7 @@ userInput.addEventListener("input",(e)=>{
 
         }
     }
+    updateWpm();
     updateAccuracy();
     currentIndex++;
 

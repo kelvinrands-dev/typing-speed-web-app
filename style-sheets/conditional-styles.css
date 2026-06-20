@@ -16,3 +16,12 @@
     background: var(--dark-level3);
     border-radius: 0.25rem;
 }
+
+
+.red{
+    color:var(--red);
+}
+
+.yellow{
+    color:var(--yellow)
+}

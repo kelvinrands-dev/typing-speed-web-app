@@ -18,10 +18,26 @@ const updateAccuracy = ()=>{
 
 
 //WPM
+let wpmTimer = null;
+let elapsedTime = 0;
+let elapsedMinutes = 0;
+let isWpmRunning = false;
+
+const updateWpm = ()=>{
+    if(!isWpmRunning){
+        wpmTimer = setInterval(()=>{elapsedTime++},1000);
+        isWpmRunning = true;
+    };
+    elapsedMinutes = elapsedTime/60;
+    currentWpm = (correctChars / 5) / elapsedMinutes;
+    currentWpm = Math.round(currentWpm);
+    
+    if(elapsedTime<=0){domWpm.textContent=0;}
+    else{domWpm.textContent=currentWpm;}
+}
 
 
 
-
-export { updateAccuracy,currentAccuracy,currentWpm }
+export { updateAccuracy,updateWpm,currentAccuracy,currentWpm }
 
 
