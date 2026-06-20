@@ -61,3 +61,8 @@ domBestWpm.forEach((wpm)=>{
 
 
 //RESTART BUTTON
+const goAgainBtn = document.querySelector(".go-again-btn");
+
+goAgainBtn.addEventListener("click",(e)=>{
+    window.location.href="index.html";
+})

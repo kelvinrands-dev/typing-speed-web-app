@@ -38,6 +38,7 @@ const endTest = ()=>{
         localStorage.setItem("corrChars",correctChars);
         localStorage.setItem("totChars",totalChars);
 
+        increaseDifficultyIndex();
         window.location.href="resultspage.html";
 
         return;

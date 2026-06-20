@@ -26,7 +26,7 @@ const increaseDifficultyIndex = ()=>{
 }
 
 //localStorage.removeItem("diffIndex");
-console.log(difficultyIndex)
+//console.log(difficultyIndex)
 
 
 //MOBILE DROPDOWN
