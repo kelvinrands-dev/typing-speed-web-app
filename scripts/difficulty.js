@@ -2,6 +2,7 @@
 import { appState,changeVariable } from "./app.js";
 import { easy,medium,hard } from "./app-data.js";
 import { loadAppDifficulty } from "./source-of-truth.js";
+import { showToast } from "./interactivity.js";
 
 
 
@@ -38,7 +39,7 @@ diffDropDownBtn.addEventListener("click",(e)=>{
         diffDropDown.classList.toggle("no-display");
     }
     else{
-
+        showToast();
     };
     
 })

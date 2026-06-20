@@ -6,6 +6,7 @@ import { difficultyIndex,increaseDifficultyIndex } from "./difficulty.js";
 import { modeSystem, timer } from "./app-mode.js";
 import { correctChars, currentIndex } from "./typing-engine.js";
 import { currentAccuracy, currentWpm, wpmTimer } from "./accuracy-and-wpm.js";
+import { showToast } from "./interactivity.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
 const appState = {

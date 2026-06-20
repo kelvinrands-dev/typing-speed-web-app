@@ -1,4 +1,5 @@
 import { appState,changeAppState, endTest } from "./app.js";
+import { showToast } from "./interactivity.js";
 
 //MOBILE DROPDOWN
 const modeBtnText = document.querySelector(".mode-btn-text")
@@ -9,7 +10,7 @@ modeBtn.addEventListener("click",(e)=>{
         modeDrop.classList.toggle("no-display");
     }
     else{
-
+        showToast();
     };
     
 })
