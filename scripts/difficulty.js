@@ -13,7 +13,20 @@ const difficultyText = document.querySelector(".diff-text");
 
 
 //DECLARING REUSABLE VARIABLES OR WHATEVER
-let difficultyIndex = 0;
+let difficultyIndex = Number(localStorage.getItem("diffIndex")) || 0;
+const increaseDifficultyIndex = ()=>{
+    if(difficultyIndex<9){
+        difficultyIndex++;
+        localStorage.setItem("diffIndex",difficultyIndex);
+    }
+    else{
+        difficultyIndex=0;
+        localStorage.setItem("diffIndex",difficultyIndex);
+    }
+}
+
+//localStorage.removeItem("diffIndex");
+console.log(difficultyIndex)
 
 
 //MOBILE DROPDOWN
@@ -66,4 +79,4 @@ hardDifficulty.forEach((button)=>{
 
 
 
-export { diffDropDownBtn,diffDropDown,difficultyText,difficultyIndex }
+export { diffDropDownBtn,diffDropDown,difficultyText,difficultyIndex,increaseDifficultyIndex }

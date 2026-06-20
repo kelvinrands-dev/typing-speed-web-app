@@ -57,3 +57,7 @@ const domBestWpm = document.querySelectorAll(".best-wpm");
 domBestWpm.forEach((wpm)=>{
     wpm.textContent = localStorage.getItem("bestWpm") || 0;
 })
+
+
+
+//RESTART BUTTON

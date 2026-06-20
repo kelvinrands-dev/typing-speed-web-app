@@ -2,7 +2,7 @@
 import { startTestOverlay } from "./remove-overlay.js";
 import { splitAppData,spans,totalChars } from "./source-of-truth.js";
 import { displayArea } from "./display-and-input-area.js";
-import { difficultyIndex } from "./difficulty.js";
+import { difficultyIndex,increaseDifficultyIndex } from "./difficulty.js";
 import { modeSystem, timer } from "./app-mode.js";
 import { correctChars, currentIndex } from "./typing-engine.js";
 import { currentAccuracy, currentWpm, wpmTimer } from "./accuracy-and-wpm.js";
@@ -45,6 +45,14 @@ const endTest = ()=>{
     
 }
 
+
+//RESTART BUTTON
+const restartBtn = document.querySelector(".restart-btn");
+
+restartBtn.addEventListener("click",(e)=>{
+    increaseDifficultyIndex();
+    window.location.reload();
+})
 
 
 
