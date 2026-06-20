@@ -1,4 +1,4 @@
-import { appState,changeAppState } from "./app.js";
+import { appState,changeAppState, endTest } from "./app.js";
 
 //MOBILE DROPDOWN
 const modeBtnText = document.querySelector(".mode-btn-text")
@@ -55,6 +55,8 @@ const modeSystem = ()=>{
             if (timeRemaining<=0){
                 clearInterval(timer);
                 currentTime.textContent=`0:00`;
+                changeAppState("test ended");
+                endTest();
             };
 
             minutes = Math.floor(timeRemaining/60);
@@ -93,4 +95,4 @@ timedMode.forEach((btn)=>{
 
 
 
-export { modeBtn,modeSystem }
+export { modeBtn,modeSystem,timer }

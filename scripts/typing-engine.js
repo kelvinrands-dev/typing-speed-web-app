@@ -1,6 +1,6 @@
 import { spans,splitAppData } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
-import { appState,changeAppState } from "./app.js";
+import { appState,changeAppState,endTest } from "./app.js";
 import { modeSystem } from "./app-mode.js";
 import { updateAccuracy,updateWpm } from "./accuracy-and-wpm.js";
 
@@ -8,7 +8,7 @@ import { updateAccuracy,updateWpm } from "./accuracy-and-wpm.js";
 let currentIndex = 0;
 let correctChars = 0;
 let incorrectChars = 0;
-let totalChars = spans.length;
+let totalChars = splitAppData.length;
 
 //REUSABLE FUNCTIONS
 const correctOrNot = (value)=>{
@@ -52,6 +52,10 @@ if(currentIndex===0){
 //TYPING ENGINE;
 userInput.addEventListener("input",(e)=>{
 
+    if(appState.status==="test ended"){
+        endTest()
+        return;
+    }
 
     //DECLARING START OF TEST
     if (appState.status!=="test started"){
@@ -118,8 +122,15 @@ userInput.addEventListener("input",(e)=>{
     updateAccuracy();
     currentIndex++;
 
+    endTest();
+    if(appState.status==="test ended"){
+        return;
+    }
+    
+    
     addHighlight();
     followCurrentCharacter();
+    
 
    //console.log(e.key)
 })

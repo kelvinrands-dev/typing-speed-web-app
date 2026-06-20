@@ -3,8 +3,9 @@ import { startTestOverlay } from "./remove-overlay.js";
 import { splitAppData,spans } from "./source-of-truth.js";
 import { displayArea } from "./display-and-input-area.js";
 import { difficultyIndex } from "./difficulty.js";
-import { modeSystem } from "./app-mode.js";
-import { totalChars } from "./typing-engine.js";
+import { modeSystem, timer } from "./app-mode.js";
+import { currentIndex, totalChars } from "./typing-engine.js";
+import { wpmTimer } from "./accuracy-and-wpm.js";
 
 //APP STATE DECLARATION AND REUSABLE FUNCTION
 const appState = {
@@ -24,7 +25,20 @@ const changeVariable = (variable,change)=>{
 };
 
 
+//TEST ENDED FUNCTION
+const endTest = ()=>{
+    if(currentIndex>=totalChars || appState.status==="test ended"){
+        changeAppState("test ended");
+        clearInterval(timer);
+        clearInterval(wpmTimer);
+        //console.log(appState.status)
+        return;
+    }
+    
+}
 
 
 
-export { changeAppState,appState,changeVariable }
+
+
+export { changeAppState,appState,changeVariable,endTest }

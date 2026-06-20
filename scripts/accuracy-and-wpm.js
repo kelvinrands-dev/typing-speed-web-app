@@ -38,6 +38,6 @@ const updateWpm = ()=>{
 
 
 
-export { updateAccuracy,updateWpm,currentAccuracy,currentWpm }
+export { updateAccuracy,updateWpm,currentAccuracy,currentWpm,wpmTimer }
 
 
