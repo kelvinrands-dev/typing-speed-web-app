@@ -306,6 +306,11 @@ main{
     font-weight: bold;
 }
 
+.results-header{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 /*GO AGAIN BUTTON*/

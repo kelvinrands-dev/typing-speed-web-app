@@ -36,7 +36,8 @@ const updateWpm = ()=>{
     else{domWpm.textContent=currentWpm;}
 }
 
-
+//BEST WPM
+const domBestWpm = document.querySelectorAll(".best-wpm")
 
 export { updateAccuracy,updateWpm,currentAccuracy,currentWpm,wpmTimer }
 

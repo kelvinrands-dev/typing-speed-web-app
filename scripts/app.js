@@ -32,12 +32,15 @@ const endTest = ()=>{
         clearInterval(timer);
         clearInterval(wpmTimer);
         //console.log(appState.status)
-        return;
 
         localStorage.setItem("wpm",currentWpm);
         localStorage.setItem("accuracy",currentAccuracy);
         localStorage.setItem("corrChars",correctChars);
         localStorage.setItem("totChars",totalChars);
+
+        window.location.href="resultspage.html";
+
+        return;
     }
     
 }
