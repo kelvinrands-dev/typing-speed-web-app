@@ -214,8 +214,11 @@ main{
 }
 
 .display-text-area{
-    max-height: 400px;
+    min-height: 180px;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .display-text-area>*{
