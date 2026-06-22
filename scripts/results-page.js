@@ -17,6 +17,9 @@ const domAccuracy = document.querySelector(".accuracy");
 const domCorrect = document.querySelector(".correct-characters");
 const domTotal = document.querySelector(".total-characters");
 
+//EXTRA
+const btnText = document.querySelector(".btn-text")
+
 //REUSABLE FUNCTIONS
 const updateDom = ()=>{
     domWpm.textContent=currentWpm;
@@ -32,22 +35,59 @@ const displayScreen = (displayMe)=>{
     displayMe.classList.remove("no-display");
 }
 
+//ANIMATIONS
+function triggerConfetti(){
+    setTimeout(() => {
+        confetti({
+            particleCount: 75,
+            spread: 60,
+            origin: { x: 0, y: 1 },
+            angle: 60,
+        });
+        confetti({
+            particleCount: 75,
+            spread: 60,
+            origin: { x: 1, y: 1 },
+            angle: 120,
+        });
+    }, 0);
+}
+function triggerCheckmarkAnimation(){
+    gsap.from(".checkmark-wrapper", {
+        scale: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: "back.out(1.7)"
+    });
+
+    gsap.to(".checkmark-wrapper", {
+        boxShadow: "0 0 0 20px rgba(77, 214, 123, 0)",
+        duration: 0.6,
+        delay: 0.4,
+        ease: "power2.out"
+    });
+}
+
 
 if (bestWpm===null){
-    displayScreen(baselineEstablished)
+    displayScreen(baselineEstablished);
     updateDom();
     localStorage.setItem("bestWpm",currentWpm);
+    triggerCheckmarkAnimation();
 }
 else{
     if(currentWpm>bestWpm){
         displayScreen(highScoreSmashed);
         updateDom();
+        btnText.textContent="Beat This Score";
         localStorage.setItem("bestWpm",currentWpm);
+        triggerConfetti();
         //console.log(`greater than`)
     }
     else{
         displayScreen(testComplete)
         updateDom();
+        triggerCheckmarkAnimation();
         //console.log(`less than`)
     }
 };

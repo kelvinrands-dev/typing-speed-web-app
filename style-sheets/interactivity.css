@@ -69,3 +69,10 @@
   transform: rotate(360deg);
   transition: transform 0.5s linear;
 }
+
+
+
+/*CHECKMARK ANIMATION*/
+.checkmark-wrapper {
+  width:64px;
+}
