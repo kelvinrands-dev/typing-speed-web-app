@@ -52,3 +52,20 @@
     flex-shrink: 0;
     color: var(--red);
 }
+
+
+
+/* RESTART BUTTON ANIMATION */
+.restart-icon {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.restart-btn:hover .restart-icon {
+  transform: rotate(90deg);
+}
+
+.restart-icon.spinning {
+  transform: rotate(360deg);
+  transition: transform 0.5s linear;
+}

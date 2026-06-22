@@ -53,6 +53,7 @@ const restartBtn = document.querySelector(".restart-btn");
 
 restartBtn.addEventListener("click",(e)=>{
     increaseDifficultyIndex();
+    restartBtn.classList.add('spinning');
     window.location.reload();
 })
 
