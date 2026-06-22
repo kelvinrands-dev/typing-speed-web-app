@@ -4,7 +4,6 @@ const correctChars = Number(localStorage.getItem("corrChars"));
 const totalChars = Number(localStorage.getItem("totChars"));
 
 let bestWpm = localStorage.getItem("bestWpm");
-bestWpm = Number(bestWpm);
 
 
 //FETCHING DOM
@@ -76,6 +75,7 @@ if (bestWpm===null){
     triggerCheckmarkAnimation();
 }
 else{
+    bestWpm = Number(bestWpm);
     if(currentWpm>bestWpm){
         displayScreen(highScoreSmashed);
         updateDom();

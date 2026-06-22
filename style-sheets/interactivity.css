@@ -18,8 +18,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 
     font-size: clamp(0.8rem, 2vw, 1rem);
-
-    max-width: 90%;
+    width:80%;
     
     opacity: 0;
 
@@ -75,4 +74,29 @@
 /*CHECKMARK ANIMATION*/
 .checkmark-wrapper {
   width:64px;
+}
+
+
+
+/* SPINNING STARTS ANIMATIONS*/
+.floating-star{
+  position:absolute;
+  animation: spinStar 10s linear infinite;
+}
+
+@keyframes spinStar {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+#star-1{
+  bottom:2rem;
+  right:1rem;
+  width:3rem;
+  animation: spinStar 8s linear infinite reverse;
+}
+
+#star-2{
+  top:7rem;
+
 }
