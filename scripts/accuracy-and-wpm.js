@@ -38,9 +38,10 @@ const updateWpm = ()=>{
 
 //BEST WPM
 const domBestWpm = document.querySelectorAll(".best-wpm");
+const storedBestWpm = localStorage.getItem("bestWpm");
 
 domBestWpm.forEach((wpm)=>{
-    wpm.textContent = localStorage.getItem("bestWpm") || 0;
+    wpm.textContent = storedBestWpm && storedBestWpm !== "null" ? storedBestWpm : 0;
 })
 
 export { updateAccuracy,updateWpm,currentAccuracy,currentWpm,wpmTimer,domBestWpm }

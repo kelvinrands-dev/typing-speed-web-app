@@ -3,7 +3,12 @@ const currentAccuracy = Number(localStorage.getItem("accuracy"));
 const correctChars = Number(localStorage.getItem("corrChars"));
 const totalChars = Number(localStorage.getItem("totChars"));
 
-let bestWpm = localStorage.getItem("bestWpm");
+const storedBestWpm = localStorage.getItem("bestWpm");
+const parsedBestWpm = storedBestWpm === null || storedBestWpm === "" || storedBestWpm === "null"
+    ? null
+    : Number(storedBestWpm);
+
+let bestWpm = parsedBestWpm;
 
 
 //FETCHING DOM
@@ -94,8 +99,10 @@ else{
 
 const domBestWpm = document.querySelectorAll(".best-wpm");
 
+const savedBestWpm = localStorage.getItem("bestWpm");
+
 domBestWpm.forEach((wpm)=>{
-    wpm.textContent = localStorage.getItem("bestWpm") || 0;
+    wpm.textContent = savedBestWpm && savedBestWpm !== "null" ? savedBestWpm : 0;
 })
 
 
