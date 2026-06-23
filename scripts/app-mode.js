@@ -5,9 +5,11 @@ import { showToast } from "./interactivity.js";
 const modeBtnText = document.querySelector(".mode-btn-text")
 const modeBtn = document.querySelector(".timemode-dropdown-btn");
 const modeDrop = document.querySelector(".timemode-dropdown-options");
+const modeArrow = document.querySelector(".mode-arrow");
 modeBtn.addEventListener("click",(e)=>{
     if(appState.status !== "test started"){
         modeDrop.classList.toggle("no-display");
+        modeArrow.classList.toggle("animate-arrow")
     }
     else{
         showToast();
@@ -77,6 +79,7 @@ passageMode.forEach((btn)=>{
         if(appState.status === "test started"){return}
         currentMode="passage";
         currentTime.textContent=`0:00`;
+        modeArrow.classList.remove("animate-arrow");
         modeDrop.classList.add("no-display");
         modeBtnText.textContent="Passage";
     })
@@ -87,6 +90,7 @@ timedMode.forEach((btn)=>{
         if(appState.status === "test started"){return};
         currentMode="timed";
         currentTime.textContent=`1:00`;
+        modeArrow.classList.remove("animate-arrow");
         modeDrop.classList.add("no-display");
         modeBtnText.textContent="Timed(60s)";
     })
@@ -96,4 +100,4 @@ timedMode.forEach((btn)=>{
 
 
 
-export { modeBtn,modeSystem,timer }
+export { modeBtn,modeDrop,modeArrow,modeSystem,timer }

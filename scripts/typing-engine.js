@@ -1,6 +1,6 @@
 import { spans,splitAppData,totalChars } from "./source-of-truth.js";
 import { displayArea,userInput } from "./display-and-input-area.js";
-import { appState,changeAppState,endTest } from "./app.js";
+import { appState,changeAppState,endTest,removeDropDown } from "./app.js";
 import { modeSystem } from "./app-mode.js";
 import { updateAccuracy,updateWpm } from "./accuracy-and-wpm.js";
 
@@ -66,6 +66,7 @@ userInput.addEventListener("input",(e)=>{
     if (appState.status!=="test started"){
         changeAppState("test started");
         modeSystem();
+        removeDropDown();
     }
 
 

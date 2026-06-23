@@ -106,6 +106,11 @@ header{
 
 .dropdown-arrow{
     width:10px;
+    transition: 0.1s;
+}
+
+.animate-arrow{
+    transform: rotate(180deg);
 }
 
 .dropdown-options{

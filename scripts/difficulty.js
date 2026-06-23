@@ -33,10 +33,12 @@ const increaseDifficultyIndex = ()=>{
 //MOBILE DROPDOWN
 const diffDropDownBtn = document.querySelector(".diff-dropdown-btn");
 const diffDropDown = document.querySelector(".diff-dropdown-options");
+const diffDropArrow = document.querySelector(".diff-drop");
 
 diffDropDownBtn.addEventListener("click",(e)=>{
     if(appState.status !== "test started"){
         diffDropDown.classList.toggle("no-display");
+        diffDropArrow.classList.toggle("animate-arrow");
     }
     else{
         showToast();
@@ -53,6 +55,7 @@ easyDifficulty.forEach((button)=>{
             loadAppDifficulty(easy);
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Easy";
+            diffDropArrow.classList.remove("animate-arrow");
         }
     });
 })
@@ -63,6 +66,7 @@ mediumDifficulty.forEach((button)=>{
             loadAppDifficulty(medium);
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Medium";
+            diffDropArrow.classList.remove("animate-arrow");
         }
     });
 })
@@ -73,6 +77,7 @@ hardDifficulty.forEach((button)=>{
             loadAppDifficulty(hard);
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Hard";
+            diffDropArrow.classList.remove("animate-arrow");
         }
     });
 })
@@ -80,4 +85,4 @@ hardDifficulty.forEach((button)=>{
 
 
 
-export { diffDropDownBtn,diffDropDown,difficultyText,difficultyIndex,increaseDifficultyIndex }
+export { diffDropDownBtn,diffDropDown,diffDropArrow,difficultyText,difficultyIndex,increaseDifficultyIndex }
