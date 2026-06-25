@@ -123,6 +123,10 @@ goAgainBtn.addEventListener("click",(e)=>{
 const shareBtn = document.querySelector(".share-result-btn");
 
 shareBtn.addEventListener('click', async () => {
+    shareBtn.disabled = true;
+    shareBtn.style.opacity = '0.5';
+    shareBtn.style.scale = '0.95';
+
     const card = document.getElementById('share-card');
     const canvas = await html2canvas(card, {
         useCORS: true,
@@ -140,6 +144,11 @@ shareBtn.addEventListener('click', async () => {
             link.href = canvas.toDataURL();
             link.click();
         }
+
+        // reset after done
+        shareBtn.disabled = false;
+        shareBtn.style.opacity = '1';
+        shareBtn.style.scale = '1';
     });
 });
 
