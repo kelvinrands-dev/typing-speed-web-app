@@ -30,6 +30,11 @@ const updateDom = ()=>{
     domAccuracy.textContent=`${currentAccuracy}%`;
     domCorrect.textContent = correctChars;
     domTotal.textContent = totalChars;
+
+    document.getElementById('share-wpm').textContent = currentWpm;
+    document.getElementById('share-accuracy').textContent = `${currentAccuracy}%`;
+    document.getElementById('share-correct').textContent = correctChars;
+    document.getElementById('share-total').textContent = totalChars;
 }
 const displayScreen = (displayMe)=>{
     baselineEstablished.classList.add("no-display");
@@ -113,3 +118,29 @@ const goAgainBtn = document.querySelector(".go-again-btn");
 goAgainBtn.addEventListener("click",(e)=>{
     window.location.href="index.html";
 })
+
+//SHARE BUTTON
+const shareBtn = document.querySelector(".share-result-btn");
+
+shareBtn.addEventListener('click', async () => {
+    const card = document.getElementById('share-card');
+    const canvas = await html2canvas(card, {
+        useCORS: true,
+        backgroundColor: '#121212'
+    });
+
+    canvas.toBlob(async (blob) => {
+        const file = new File([blob], 'my-typing-results.png', { type: 'image/png' });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file] });
+        } else {
+            const link = document.createElement('a');
+            link.download = 'my-typing-results.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    });
+});
+
+

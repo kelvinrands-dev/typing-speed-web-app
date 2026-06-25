@@ -356,3 +356,9 @@ main{
     color:var(--white)
 }
 
+#share-card {
+  position: fixed;
+  left: -9999px;
+  top: 0;           /* add this */
+  width: 320px;     /* explicit width */
+}
