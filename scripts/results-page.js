@@ -133,9 +133,10 @@ shareBtn.addEventListener('click', async () => {
         backgroundColor: '#121212'
     });
 
-    canvas.toBlob(async (blob) => {
-        const file = new File([blob], 'my-typing-results.png', { type: 'image/png' });
+canvas.toBlob(async (blob) => {
+    const file = new File([blob], 'my-typing-results.png', { type: 'image/png' });
 
+    try {
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             await navigator.share({ files: [file] });
         } else {
@@ -144,12 +145,13 @@ shareBtn.addEventListener('click', async () => {
             link.href = canvas.toDataURL();
             link.click();
         }
-
-        // reset after done
+    } catch (err) {
+        console.log('Share cancelled');
+    } finally {
         shareBtn.disabled = false;
         shareBtn.style.opacity = '1';
         shareBtn.style.scale = '1';
-    });
-});
+    }
+});});
 
 

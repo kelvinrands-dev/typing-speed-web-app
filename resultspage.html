@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
+    <style>
+        html {
+            background-color: #121212;
+        }
+
+        body {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 120ms ease;
+        }
+
+        body.ready {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.addEventListener('load', () => {
+                document.body.classList.add('ready');
+            }, { once: true });
+
+            setTimeout(() => {
+                document.body.classList.add('ready');
+            }, 50);
+        });
+    </script>
     <link rel="stylesheet" href="style-sheets/colors.css">
     <link rel="stylesheet" href="style-sheets/defaults.css">
     <link rel="stylesheet" href="style-sheets/structure.css">
