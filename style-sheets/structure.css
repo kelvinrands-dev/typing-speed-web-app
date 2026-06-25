@@ -35,6 +35,10 @@ header{
     justify-self:end;
 }
 
+.restart-btn-text{
+    display: none;
+}
+
 .desktop-logos{
     display:none;
 }
