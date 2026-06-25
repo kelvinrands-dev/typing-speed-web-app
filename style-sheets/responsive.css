@@ -1,7 +1,65 @@
 @media (min-width:768px){
+   body{
+      padding:1.5rem 2rem;
+   }
+
+
+   /*HEADER*/
    #mobile-best{display: none;}
    #desktop-best{display: flex;}
 
 
+   /*WPM, ACCURACY AND TIME*/
+   .header-2{
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .wpm-accuracy-time{
+      gap:1rem;
+      font-size: 1rem;
+   }
+
+   .wpm-accuracy-time>*{
+      flex-direction: row;
+      padding:0;
+      align-items: center;
+   }
+
+   .wpm-accuracy-time>:nth-child(2){
+      padding: 0 1rem;
+   }
+
+
+   /*DIFFICULTY AND MODE*/
+   .mobile-diff-and-mode{
+      gap:0.75rem;
+   }
+
+   .dropdown-btn{
+      width:7.5rem;
+   }
+
+
+   /*MAIN BODY*/
+   .display-text-area{
+      height: 300px;
+   }
+
+   .display-text-area>*{
+      font-size: 2rem;
+   }
+
+   .start-test{
+      font-size: 1.5rem;
+   }
     
+}
+
+
+
+@media (min-width:820px){
+   .display-text-area{
+      height: 400px;
+   }
 }
