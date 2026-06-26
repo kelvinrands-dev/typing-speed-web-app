@@ -95,7 +95,7 @@ const modeSystem = ()=>{
 
 passageMode.forEach((btn)=>{
     btn.addEventListener("click",(e)=>{
-        if(appState.status === "test started"){return}
+        if(appState.status === "test started"){showToast();return}
         currentMode="passage";
         currentTime.textContent=`0:00`;
         modeArrow.classList.remove("animate-arrow");
@@ -107,7 +107,7 @@ passageMode.forEach((btn)=>{
 
 timedMode.forEach((btn)=>{
     btn.addEventListener("click",(e)=>{
-        if(appState.status === "test started"){return};
+        if(appState.status === "test started"){showToast(); return};
         currentMode="timed";
         currentTime.textContent=`1:00`;
         modeArrow.classList.remove("animate-arrow");

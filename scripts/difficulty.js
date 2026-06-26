@@ -81,6 +81,7 @@ easyDifficulty.forEach((button)=>{
             diffDropArrow.classList.remove("animate-arrow");
             activeDiff("easy");
         }
+        else{showToast()}
     });
 })
 
@@ -93,6 +94,7 @@ mediumDifficulty.forEach((button)=>{
             diffDropArrow.classList.remove("animate-arrow");
             activeDiff("medium");
         }
+        else{showToast()}
     });
 })
 
@@ -105,6 +107,7 @@ hardDifficulty.forEach((button)=>{
             diffDropArrow.classList.remove("animate-arrow");
             activeDiff("hard");
         }
+        else{showToast()};
     });
 })
 
