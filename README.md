@@ -8,14 +8,15 @@ https://test-how-fast-you-type.netlify.app/
 
 ## ✨ Features
 
-* Multiple difficulty levels (Easy, Medium, Hard)
-* Real-time WPM (Words Per Minute) calculation
-* Real-time typing accuracy tracking
-* Personal Best tracking using Local Storage
-* Responsive design for mobile, tablet, and desktop
-* Clean results page with animated feedback
-* Restart and retry functionality
-* Smooth typing experience with passage switching
+- Multiple difficulty levels (Easy, Medium, Hard)
+- Real-time WPM (Words Per Minute) calculation
+- Real-time typing accuracy tracking
+- Personal Best tracking using Local Storage
+- Share results as an image
+- Responsive design for mobile, tablet, and desktop
+- Clean results page with animated feedback
+- Restart and retry functionality
+- Smooth typing experience with passage switching
 
 ## 🛠️ Built With
 
