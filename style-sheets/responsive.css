@@ -122,7 +122,54 @@
 
    .desktop-logo{
       display: flex;
-      width:10rem;
+      width:12rem;
    }
 
+
+   /*DIFFICULTY AND MODE*/
+   .mobile-diff-and-mode{
+      display: none;
+   }
+
+   .desktop-diff-and-mode{
+      display: flex;
+      gap:1rem;
+   }
+
+   .desktop-diff-section{
+      border-right: 1px solid var(--dark-level2);
+      padding-right: 1rem;
+   }
+
+   .desk-settings-section{
+      display: flex;
+      gap:1rem;
+      align-items: center;
+   }
+
+   .desk-btn-parent{
+      display: flex;
+      gap:0.5rem;
+      align-items: center;
+   }
+
+   .desk-btn{
+      all:unset;
+      cursor:pointer;
+      color:var(--white);
+      border: 1px solid var(--white);
+      border-radius: 0.45rem;
+      padding:0.25rem 0.5rem;
+      transition: 0.3s;
+   }
+
+   .desk-btn:hover{
+      color:var(--lighter-blue);
+      border-color: var(--lighter-blue);
+   }
+
+   .desk-btn.selected{
+      color:var(--darker-blue);
+      border-color: var(--darker-blue);
+   }
 }
