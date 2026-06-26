@@ -1,6 +1,25 @@
 import { appState,changeAppState, endTest } from "./app.js";
 import { showToast } from "./interactivity.js";
 
+
+//FOR DESKTOP
+const activeMode = (currentBtn)=>{
+    const deskPassage = document.querySelector(".desk-passage");
+    const deskTimed = document.querySelector(".desk-timed");
+    const deskMode = document.querySelectorAll(".desk-mode-btn");
+
+    if(currentBtn==="passage"){
+        deskMode.forEach((btn)=>{btn.classList.remove("selected")});
+        deskPassage.classList.add("selected")
+    };
+    if(currentBtn==="timed"){
+        deskMode.forEach((btn)=>{btn.classList.remove("selected")});
+        deskTimed.classList.add("selected")
+    }
+    
+}
+
+
 //MOBILE DROPDOWN
 const modeBtnText = document.querySelector(".mode-btn-text")
 const modeBtn = document.querySelector(".timemode-dropdown-btn");
@@ -82,6 +101,7 @@ passageMode.forEach((btn)=>{
         modeArrow.classList.remove("animate-arrow");
         modeDrop.classList.add("no-display");
         modeBtnText.textContent="Passage";
+        activeMode("passage")
     })
 });
 
@@ -93,6 +113,7 @@ timedMode.forEach((btn)=>{
         modeArrow.classList.remove("animate-arrow");
         modeDrop.classList.add("no-display");
         modeBtnText.textContent="Timed(60s)";
+        activeMode("timed");
     })
 })
 

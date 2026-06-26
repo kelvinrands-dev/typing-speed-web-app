@@ -26,6 +26,29 @@ const increaseDifficultyIndex = ()=>{
     }
 }
 
+
+//FOR DESKTOP
+const activeDiff = (currentBtn)=>{
+    const deskEasy = document.querySelector(".desk-easy");
+    const deskMedium = document.querySelector(".desk-medium");
+    const deskHard = document.querySelector(".desk-hard");
+    const deskBtn = document.querySelectorAll(".desk-diff-btn");
+
+    if(currentBtn==="easy"){
+        deskBtn.forEach((btn)=>{btn.classList.remove("selected")});
+        deskEasy.classList.add("selected")
+    };
+    if(currentBtn==="medium"){
+        deskBtn.forEach((btn)=>{btn.classList.remove("selected")});
+        deskMedium.classList.add("selected")
+    }
+    if(currentBtn==="hard"){
+        deskBtn.forEach((btn)=>{btn.classList.remove("selected")});
+        deskHard.classList.add("selected")
+    }
+    
+}
+
 //localStorage.removeItem("diffIndex");
 //console.log(difficultyIndex)
 
@@ -56,6 +79,7 @@ easyDifficulty.forEach((button)=>{
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Easy";
             diffDropArrow.classList.remove("animate-arrow");
+            activeDiff("easy");
         }
     });
 })
@@ -67,6 +91,7 @@ mediumDifficulty.forEach((button)=>{
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Medium";
             diffDropArrow.classList.remove("animate-arrow");
+            activeDiff("medium");
         }
     });
 })
@@ -78,6 +103,7 @@ hardDifficulty.forEach((button)=>{
             diffDropDown.classList.add("no-display");
             difficultyText.textContent="Hard";
             diffDropArrow.classList.remove("animate-arrow");
+            activeDiff("hard");
         }
     });
 })
